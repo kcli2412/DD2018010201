@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Button bt3;
+    ToggleButton tb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +18,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         bt3 = (Button) findViewById(R.id.button3);
         bt3.setOnClickListener(this);
+        tb =findViewById(R.id.toggleButton);
+        tb.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "切換", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void click1(View v)
