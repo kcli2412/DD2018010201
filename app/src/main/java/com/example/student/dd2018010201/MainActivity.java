@@ -4,12 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Button bt3;
     ToggleButton tb;
+    Switch sw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 else
                 {
                     Toast.makeText(MainActivity.this, "目前關閉中", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        sw = findViewById(R.id.switch1);
+        sw.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                if (sw.isChecked())
+                {
+                    Toast.makeText(MainActivity.this, "打開", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "關閉", Toast.LENGTH_SHORT).show();
                 }
             }
         });
