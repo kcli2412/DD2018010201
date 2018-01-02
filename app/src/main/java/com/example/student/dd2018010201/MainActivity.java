@@ -15,8 +15,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bt3 = (Button) findViewById(R.id.button3);
-        MyListener listener = new MyListener();
-        bt3.setOnClickListener(listener);
+        bt3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Test3", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void click1(View v)
@@ -29,14 +34,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button2:
                 Toast.makeText(MainActivity.this, "Test2", Toast.LENGTH_SHORT).show();
                 break;
-        }
-    }
-
-    class MyListener implements View.OnClickListener
-    {
-        @Override
-        public void onClick(View view) {
-            Toast.makeText(MainActivity.this, "Test3", Toast.LENGTH_SHORT).show();
         }
     }
 }
